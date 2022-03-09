@@ -2,6 +2,7 @@
 On your local machine:
 ```bash
 ssh-keygen -t rsa -b 4096
+@@ text in purple (and bold)@@
 ```
 This will generate files in:
 C:\Users\username\.ssh
