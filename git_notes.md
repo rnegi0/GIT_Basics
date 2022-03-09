@@ -8,10 +8,8 @@
 
 ### Set up ssh and copy ssh public key to github
 On your local machine:
-```bash
-ssh-keygen -t rsa -b 4096
-@@ text in purple (and bold)@@
-```
++ ssh-keygen -t rsa -b 4096
+
 This will generate files in:
 C:\Users\username\.ssh
 
