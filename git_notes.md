@@ -1,14 +1,16 @@
 ### Set up ssh and copy ssh public key to github
 On your local machine:
+```
 ssh-keygen -t rsa -b 4096
+```
 This will generate files in:
-C:\Users\Manoj\.ssh
+C:\Users\username\.ssh
 
 Copy the content of file id_rsa.pub into clipboard.
 
 Go to github -> Settings -> ssh keys -> add new ssh key -> paste the clipboard -> save
 
-##Clone repo to your local machine
+### Clone repo to your local machine
 Go to github -> repositories -> click on the repo -> Code -> HTTPS or ssh -> copy the url
 
 On your machine:
