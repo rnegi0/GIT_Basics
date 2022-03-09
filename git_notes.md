@@ -30,7 +30,8 @@ git@github.com:manojkmgit/myapp2.git
 From your local machine, you have 2 options to use this newly created repo. Either you initialize a new local repo now or you push an already initialized local repo to this new remote repo.
 
 #### Option 1: Create a new repository on the command line
-```echo "# myapp2" >> README.md
+```
+echo "# myapp2" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
@@ -47,78 +48,126 @@ git push -u origin main
 
 If you ever need to merge unrelated histories
 
-`git pull origin main --allow-unrelated-histories`
+```
+git pull origin main --allow-unrelated-histories
+```
 
 ### Basic commands
-**Check current branch**
-```git branch```
+Check current branch
+```
+git branch
+```
 
 Fetch branches/tags from one or more repos along with history etc.
 It will fetch origin remote.
-git fetch 
+```
+git fetch
+```
 It will fetch all remotes.
+```
 git fetch --all
+```
 
 Check all branches on local
+```
 git branch -a
+```
 
 Check all branches on remote
+```
 git branch -r
+```
 
 Create a new local branch
+```
 git branch feature1
+```
 
 Checkout to another branch
+```
 git checkout feature1
+```
 
 Create and checkout to a new branch in same command
+```
 git branch -M feature1
+```
 
 Stage added/modified/deleted files.
+```
 git add .
+```
 
 Check status
+```
 git status
+```
+
+Check difference between working and the index or a tree, between the index and a tree, between two tress, between two files etc.
+```git diff
+git diff main feature1
+```
 
 Unstage the deleted file after staging
+```
 git restore --staged <file>
+```
 
 Delete file using git command. It will delete the file from git and disk.
+```
 git rm <file>
+```
 
 Commit the changes
+```
 git commit -m "Code updated"
+```
 
 Stage modified/deleted files and commit in one command. It will not do anything for new files.
+```
 git commit -am "Code updated"
+```
 
 Stage added/modified/deleted files and commit in one command. It will stage and commit for new files too.
+```
 git add . && git commit -am "Code updated"
+```
 
 Push local changes to remote default 'main' branch.
 Here, -u is --set-upstream
+```
 git push
 git push -u git@github.com:manojkmgit/myapp2.git main
 git push git@github.com:manojkmgit/myapp2.git main
+```
 
 Delete a local branch only
 Here, -D is --delete --force
+```
 git branch -d feature1
 git branch -D feature1
+```
 
 Delete a remote branch and local too
+```
 git push origin --delete feature1
 git branch -d feature1
+```
 
 After that, run below on other machines
+```
 git fetch --all --prune
+```
 
 View expanded details on Git objects such as blobs, trees, tags, and commits.
+```
 git show 0c708f
 git show 93b3e6a --oneline
 git show 93b3e6a --oneline --pretty=fuller
+```
 
 Check the log of git actions
+```
 git log
 git log --oneline
 git log --oneline --graph
@@ -126,7 +175,7 @@ git log --all --decorate --oneline --graph
 git log --all --decorate --oneline --graph --pretty="%h" --date=human
 git log --all --decorate --oneline --graph --pretty="%s" --date=human
 git log --graph --pretty="%C(yellow) Hash: %h %C(blue)Date: %ad %C(red) Message: %s " --date=human
-
+```
 
 ###Merging via command line
 If you do not want to use the merge button or an automatic merge cannot be performed, you can perform a manual merge on the command line. However, merging to main branch may not be allowed from local machine in all work places.
