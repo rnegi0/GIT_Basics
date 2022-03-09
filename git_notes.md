@@ -1,6 +1,6 @@
 ### Set up ssh and copy ssh public key to github
 On your local machine:
-```shell
+```bash
 ssh-keygen -t rsa -b 4096
 ```
 This will generate files in:
