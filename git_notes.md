@@ -19,7 +19,9 @@ On your machine:
 `git clone <repo url>`
 
 `git clone https://github.com/manojkmgit/myapp2.git`
+
 or
+
 `git clone git@github.com:manojkmgit/myapp2.git`
 
 ### How to connect a local repo to a remote Git repo
@@ -31,20 +33,20 @@ git@github.com:manojkmgit/myapp2.git
 From your local machine, you have 2 options to use this newly created repo. Either you initialize a new local repo now or you push an already initialized local repo to this new remote repo.
 
 #### Option 1 Create a new repository on the command line
-echo "# myapp2" >> README.md
+```echo "# myapp2" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:manojkmgit/myapp2.git
 git push -u origin main
-
+```
 #### Option 2 Push an existing repository from the command line
-`
+```
 git remote add origin git@github.com:manojkmgit/myapp2.git
 git branch -M main
 git push -u origin main
-`
+```
 
 If you ever need to merge unrelated histories
 
