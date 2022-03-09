@@ -15,14 +15,11 @@ Go to github -> Settings -> ssh keys -> add new ssh key -> paste the clipboard -
 Go to Github -> repositories -> click on the repo -> Code -> HTTPS or ssh -> copy the url
 
 On your machine:
-
-`git clone <repo url>`
-
-`git clone https://github.com/manojkmgit/myapp2.git`
-
-or
-
-`git clone git@github.com:manojkmgit/myapp2.git`
+```git clone <repo url>
+git clone https://github.com/manojkmgit/myapp2.git
+#or
+git clone git@github.com:manojkmgit/myapp2.git
+```
 
 ### How to connect a local repo to a remote Git repo
 Go to Github and create a new repo. Don't create any additonal files.
