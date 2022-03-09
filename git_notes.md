@@ -1,11 +1,3 @@
-```diff
-- text in red
-text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
 ### Set up ssh and copy ssh public key to github
 On your local machine:
 
@@ -20,18 +12,17 @@ Copy the content of file id_rsa.pub into clipboard.
 Go to github -> Settings -> ssh keys -> add new ssh key -> paste the clipboard -> save
 
 ### Clone repo to your local machine
-Go to github -> repositories -> click on the repo -> Code -> HTTPS or ssh -> copy the url
+Go to Github -> repositories -> click on the repo -> Code -> HTTPS or ssh -> copy the url
 
 On your machine:
 
-git clone <repo url>
+`git clone <repo url>`
 
-git clone https://github.com/manojkmgit/myapp2.git
+`git clone https://github.com/manojkmgit/myapp2.git`
 or
-git clone git@github.com:manojkmgit/myapp2.git
+`git clone git@github.com:manojkmgit/myapp2.git`
 
-##How to connect a local repo to a remote Git repo
-
+### How to connect a local repo to a remote Git repo
 Go to Github and create a new repo. Don't create any additonal files.
 Take note of the repo url in https or ssh format.
 Say it is:
@@ -39,7 +30,7 @@ git@github.com:manojkmgit/myapp2.git
 
 From your local machine, you have 2 options to use this newly created repo. Either you initialize a new local repo now or you push an already initialized local repo to this new remote repo.
 
-###Option 1 Create a new repository on the command line
+#### Option 1 Create a new repository on the command line
 echo "# myapp2" >> README.md
 git init
 git add README.md
@@ -48,13 +39,16 @@ git branch -M main
 git remote add origin git@github.com:manojkmgit/myapp2.git
 git push -u origin main
 
-###Option 2 Push an existing repository from the command line
+#### Option 2 Push an existing repository from the command line
+`
 git remote add origin git@github.com:manojkmgit/myapp2.git
 git branch -M main
 git push -u origin main
+`
 
-####if you ever need to merge unrelated histories
-git pull origin main --allow-unrelated-histories
+If you ever need to merge unrelated histories
+
+`git pull origin main --allow-unrelated-histories`
 
 ####Basic commands
 Check current branch
