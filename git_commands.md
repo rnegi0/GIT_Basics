@@ -252,7 +252,7 @@ git remote set-url origin git@github.com:manojkmgit/myapp2.git
 ```
 
 
-###Set up git configs
+### Set up git configs
 ```
 git config --list
 git config --global user.name "First Middle"
