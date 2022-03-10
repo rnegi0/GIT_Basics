@@ -63,9 +63,26 @@ It will fetch origin remote.
 ```
 git fetch
 ```
+
 It will fetch all remotes.
 ```
 git fetch --all
+```
+
+It will fetch a particular branch from remote repo.
+```
+git fetch origin myproject/feature1
+git fetch repo_alias myproject/feature1
+```
+
+If you have added remote repo as name of 'repo_alias', not as 'origin', then same command will look like this.
+```
+git fetch repo_alias myproject/feature1
+```
+
+It will synchronize your local repository with the remote repo's main branch.
+```
+git fetch origin
 ```
 
 Check all branches on local
@@ -166,7 +183,9 @@ git show 93b3e6a --oneline
 git show 93b3e6a --oneline --pretty=fuller
 ```
 
-Check the current HEAD and its ancestry
+### Using log command
+It shows the current HEAD and its ancestry i.e. it shows commit logs
+It lists commits that are reachable by following the parent links from the given commit(s), but exclude commits that are reachable from the one(s) given with a ^ in front of them. The output is given in reverse chronological order by default.
 ```
 git log
 git log --oneline
@@ -175,6 +194,20 @@ git log --all --decorate --oneline --graph
 git log --all --decorate --oneline --graph --pretty="%h" --date=human
 git log --all --decorate --oneline --graph --pretty="%s" --date=human
 git log --graph --pretty="%C(yellow) Hash: %h %C(blue)Date: %ad %C(red) Message: %s " --date=human
+git log --oneline main..origin/main
+git log origin/main
+```
+
+Another example
+List all the commits which are reachable from foo or bar, but not from baz.
+```
+git log foo bar ^baz
+```
+
+Below two commands do same thing.
+```
+git log origin..HEAD
+git log HEAD ^origin
 ```
 
 ### Merging via command line
@@ -196,6 +229,14 @@ Step 2: Merge the changes from feature into main branch and update on GitHub.
 git checkout main
 git merge --no-ff feature1
 git push origin main
+```
+
+If origin/main has been updated by other users on remote repo, then you can merge remote change to main of your local repo.
+```
+git log --oneline main..origin/main
+git checkout main
+git log origin/main
+git merge origin/main
 ```
 
 ### Creating pull requests
@@ -227,6 +268,8 @@ git dog
 ```
 
 ### Managing remote origin
+The word 'origin' is just a convention to refer to remote repo url. Basically origin is the default shortname that Git uses for a remote repository when you clone that remote repository. So it's just the default. When you add a remote repo, you can use any other word instead of 'origin'.
+
 Check current remote origin
 ```
 git remote -v
@@ -250,7 +293,6 @@ Set remote url
 ```
 git remote set-url origin git@github.com:manojkmgit/myapp2.git
 ```
-
 
 ### Set up git configs
 ```
